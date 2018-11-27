@@ -1,0 +1,14 @@
+{
+  "name": "ct-exercise",
+  "version": "1.0.0",
+  "description": "Exercise for Commercetools interview",
+  "main": "./index.js",
+  "license": "GPL-3.0",
+  "repository": "https://github.com/mquinnv/ct-exercise",
+  "scripts": {},
+  "author": "Michael Ventura",
+  "devDependencies": {},
+  "dependencies": {
+    "superagent": "^4.0.0"
+  }
+}
