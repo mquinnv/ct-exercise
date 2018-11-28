@@ -4,6 +4,7 @@ const request = require('superagent'),
   key = require('./var/key.json'),
   fs = require('fs')
 
+/* func for sptting out a consistant representation of a listing */
 const format = l => `${l.listing_id} "${l.title}"`
 
 /* etsy api abstracted out in order to write tests that don't need the etsy api */
@@ -32,14 +33,15 @@ const fsDb = {
         }
       })})
 }
-
+/* the main module export that supports alternative current listings APIs and local storage options */
 const sync = async (shopId, getCurrentListings = getEtsyListings, db = fsDb) => {
     try {
-      const etsyRes = await getCurrentListings(shopId),
-        currentListings = etsyRes.body.results
+      const currentRes = await getCurrentListings(shopId),
+        currentListings = currentRes.body.results
 
       const lastSync = await db.get(shopId)
       const changes = [];
+      /* process the lists exactly once through to find changes */
       currentListings.forEach(listing => {
         while (lastSync[0] && lastSync[0].listing_id < listing.listing_id) {
           changes.push( `- removed listing ${format(lastSync[0])}`)
