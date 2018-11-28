@@ -1,6 +1,6 @@
 # ct-exercise
 
-To run the program, first create in var/key.json a file containing your etsy api key such as:
+To run the program, clone the repo, npm install, and then create in var/key.json a file containing your etsy api key such as:
 
 ```
 {
