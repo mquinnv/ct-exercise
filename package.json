@@ -2,12 +2,18 @@
   "name": "ct-exercise",
   "version": "1.0.0",
   "description": "Exercise for Commercetools interview",
-  "main": "./index.js",
+  "main": "./shops.js",
   "license": "GPL-3.0",
   "repository": "https://github.com/mquinnv/ct-exercise",
-  "scripts": {},
+  "scripts": {
+    "clean": "rm data/*",
+    "test": "mocha",
+    "sync": "node ./index.js"
+  },
   "author": "Michael Ventura",
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
   "dependencies": {
     "superagent": "^4.0.0"
   }

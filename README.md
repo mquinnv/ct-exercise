@@ -8,7 +8,13 @@ To run the program, first create in var/key.json a file containing your etsy api
 }
 ```
 
-Then,
+Then to run against etsy and the local data store,
 
-`node index.js shop1 [shop2] ... [shopN]`
+`npm run sync shop1 [shop2] ... [shopN]`
+
+to empty the local data store,
+`npm run clean`
+
+or to run the test suite:
+`npm run test`
 
